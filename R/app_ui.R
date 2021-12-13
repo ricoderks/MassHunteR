@@ -9,8 +9,23 @@ app_ui <- function(request) {
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # Your application UI logic 
-    fluidPage(
-      h1("MassHunteR")
+    navbarPage(
+      title = paste0("MassHunteR - Qual | v", utils::packageVersion("MassHunteR")),
+      
+      # Help
+      navbarMenu(
+        title = "Help",
+        tabPanel(
+          title = "Help",
+          mod_help_ui(id = "help")
+        ),
+        "----",
+        tabPanel(
+          title = "About",
+          mod_about_ui(id = "about")
+        )
+      )
+      # end Help
     )
   )
 }

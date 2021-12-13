@@ -16,11 +16,13 @@
 ## Dependencies ----
 ## Add one line by package you want to add as dependency
 usethis::use_package( "thinkr" )
+usethis::use_package( "utils" )
+usethis::use_package( "sessioninfo" )
 
 ## Add modules ----
 ## Create a module infrastructure in R/
-golem::add_module( name = "name_of_module1" ) # Name of the module
-golem::add_module( name = "name_of_module2" ) # Name of the module
+golem::add_module( name = "help" ) # Name of the module
+golem::add_module( name = "about" ) # Name of the module
 
 ## Add helper functions ----
 ## Creates fct_* and utils_*
