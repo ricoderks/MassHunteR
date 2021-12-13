@@ -6,7 +6,7 @@
 #'
 #' @noRd 
 #' 
-#' @importFrom openxlsx createWorkbook addWorksheet writeDataTable saveWorkbook
+#' @importFrom openxlsx createWorkbook addWorksheet saveWorkbook writeData
 #'
 #' @importFrom shiny NS tagList 
 mod_download_ui <- function(id){
@@ -70,24 +70,24 @@ mod_download_server <- function(id, r){
                      sheetName = "FWHM")
         
         # write the data
-        writeDataTable(wb = wb,
-                       sheet = "Retention time",
-                       x = r$rt)
-        writeDataTable(wb = wb,
-                       sheet = "Peak area",
-                       x = r$area)
-        writeDataTable(wb = wb,
-                       sheet = "Peak height",
-                       x = r$height)
-        writeDataTable(wb = wb,
-                       sheet = "Peak width",
-                       x = r$width)
-        writeDataTable(wb = wb,
-                       sheet = "Peak symmetry",
-                       x = r$sym)
-        writeDataTable(wb = wb,
-                       sheet = "FWHM",
-                       x = r$FWHM)
+        writeData(wb = wb,
+                  sheet = "Retention time",
+                  x = r$rt)
+        writeData(wb = wb,
+                  sheet = "Peak area",
+                  x = r$area)
+        writeData(wb = wb,
+                  sheet = "Peak height",
+                  x = r$height)
+        writeData(wb = wb,
+                  sheet = "Peak width",
+                  x = r$width)
+        writeData(wb = wb,
+                  sheet = "Peak symmetry",
+                  x = r$sym)
+        writeData(wb = wb,
+                  sheet = "FWHM",
+                  x = r$FWHM)
         
         # save the workbook
         saveWorkbook(wb = wb,
