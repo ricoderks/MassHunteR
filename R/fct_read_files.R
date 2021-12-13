@@ -27,7 +27,7 @@ read_mh_xls <- function(file_paths = NULL, file_names = NULL) {
   my_df <- my_df %>% 
     mutate(data = map(.x = .data$file_paths,
                       .f = ~ read_xls(path = .x))) %>% 
-    unnest(cols = data)
+    unnest(cols = .data$data)
   
   return(my_df)
 }
@@ -60,7 +60,7 @@ tidy_df <- function(data = NULL, parameter = NULL) {
   
   if(!is.null(data)) {
     my_df <- data %>%
-      select(-file_paths) %>% 
+      select(-.data$file_paths) %>% 
       pivot_wider(id_cols = .data$file_names,
                   names_from = .data$Peak,
                   values_from = param,
