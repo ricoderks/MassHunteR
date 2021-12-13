@@ -1,6 +1,6 @@
 Package: MassHunteR
 Title: Merge result files from MassHunter Qual
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: person('Rico', 'Derks', email = 'r.j.e.derks@lumc.nl', role = c('cre', 'aut'))
 Description: Merge result files from MassHunter Qual into one Excel file.
 License: AGPL (>= 3)
