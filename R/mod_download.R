@@ -89,6 +89,7 @@ mod_download_server <- function(id, r){
                        sheet = "FWHM",
                        x = r$FWHM)
         
+        # save the workbook
         saveWorkbook(wb = wb,
                      file = file)
       }
