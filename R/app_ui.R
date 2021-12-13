@@ -8,9 +8,16 @@ app_ui <- function(request) {
   tagList(
     # Leave this function for adding external resources
     golem_add_external_resources(),
+    
     # Your application UI logic 
     navbarPage(
       title = paste0("MassHunteR - Qual | v", utils::packageVersion("MassHunteR")),
+      
+      # Files
+      tabPanel(
+        title = "Files",
+        mod_files_ui(id = "result_files")
+      ), # end Files
       
       # Help
       navbarMenu(

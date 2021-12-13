@@ -18,15 +18,25 @@
 usethis::use_package( "thinkr" )
 usethis::use_package( "utils" )
 usethis::use_package( "sessioninfo" )
+usethis::use_package( "tibble" )
+usethis::use_package( "rlang" )
+usethis::use_package( "magrittr" )
+usethis::use_package( "dplyr" )
+usethis::use_package( "purrr" )
+usethis::use_package( "readxl" )
+usethis::use_package( "openxlsx" )
+usethis::use_package( "tidyr" )
 
 ## Add modules ----
 ## Create a module infrastructure in R/
-golem::add_module( name = "help" ) # Name of the module
-golem::add_module( name = "about" ) # Name of the module
+golem::add_module( name = "help" ) # help section
+golem::add_module( name = "about" ) # about section
+golem::add_module( name = "files" ) # files section
+golem::add_module( name = "download" ) # download file
 
 ## Add helper functions ----
 ## Creates fct_* and utils_*
-golem::add_fct( "helpers" ) 
+golem::add_fct( "read_files" ) 
 golem::add_utils( "helpers" )
 
 ## External resources
