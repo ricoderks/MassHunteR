@@ -64,8 +64,8 @@ mod_download_server <- function(id, r){
                      sheetName = "Peak height")
         addWorksheet(wb = wb, 
                      sheetName = "Peak width")
-        addWorksheet(wb = wb, 
-                     sheetName = "Peak symmetry")
+        # addWorksheet(wb = wb, 
+        #              sheetName = "Peak symmetry")
         addWorksheet(wb = wb, 
                      sheetName = "FWHM")
         
@@ -82,9 +82,9 @@ mod_download_server <- function(id, r){
         writeData(wb = wb,
                   sheet = "Peak width",
                   x = r$width)
-        writeData(wb = wb,
-                  sheet = "Peak symmetry",
-                  x = r$sym)
+        # writeData(wb = wb,
+        #           sheet = "Peak symmetry",
+        #           x = r$sym)
         writeData(wb = wb,
                   sheet = "FWHM",
                   x = r$FWHM)

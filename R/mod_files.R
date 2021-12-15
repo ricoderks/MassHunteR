@@ -35,10 +35,10 @@ mod_files_ui <- function(id){
         title = "Peak width",
         dataTableOutput(outputId = ns("show_width"))
       ),
-      tabPanel(
-        title = "Peak symmetry",
-        dataTableOutput(outputId = ns("show_sym"))
-      ),
+      # tabPanel(
+      #   title = "Peak symmetry",
+      #   dataTableOutput(outputId = ns("show_sym"))
+      # ),
       tabPanel(
         title = "FWHM",
         dataTableOutput(outputId = ns("show_FWHM"))
@@ -80,8 +80,8 @@ mod_files_server <- function(id, r){
                             parameter = "width")
         r$rt <- tidy_df(data = res_df,
                         parameter = "rt")
-        r$sym <- tidy_df(data = res_df,
-                         parameter = "sym")
+        # r$sym <- tidy_df(data = res_df,
+        #                  parameter = "sym")
         r$FWHM <- tidy_df(data = res_df,
                           parameter = "FWHM")
       }
@@ -124,16 +124,16 @@ mod_files_server <- function(id, r){
       }
     })
     
-    # show the symmetry table
-    output$show_sym <- renderDataTable({
-      req(r$sym)
-      
-      if(!is.null(r$sym)) {
-        r$sym
-      }
-    })
+    # # show the symmetry table
+    # output$show_sym <- renderDataTable({
+    #   req(r$sym)
+    #   
+    #   if(!is.null(r$sym)) {
+    #     r$sym
+    #   }
+    # })
     
-    # show the symmetry table
+    # show the FWHM table
     output$show_FWHM <- renderDataTable({
       req(r$FWHM)
       
