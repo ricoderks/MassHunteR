@@ -59,12 +59,20 @@ tidy_df <- function(data = NULL, parameter = NULL) {
                   "sym" = "Symmetry")
   
   if(!is.null(data)) {
-    my_df <- data %>%
-      select(-.data$file_paths) %>% 
-      pivot_wider(id_cols = .data$file_names,
-                  names_from = .data$Peak,
-                  values_from = param,
-                  names_prefix = "peak")
+    # get the column names
+    cols <- colnames(data)
+    
+    # check if the column is present
+    if(param %in% cols) {
+      my_df <- data %>%
+        select(-.data$file_paths) %>% 
+        pivot_wider(id_cols = .data$file_names,
+                    names_from = .data$Peak,
+                    values_from = param,
+                    names_prefix = "peak")
+    } else {
+      my_df <- NULL
+    }
   } else {
     my_df <- NULL
   }
